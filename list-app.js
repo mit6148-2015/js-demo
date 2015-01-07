@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   // append text to list
   var appendText = function(text) {
-    $('#list').append('<li>' + text + '</li>');
+    $('#list').append($('<li>' + text + '</li>'));
   }
 
   // append input box text to list on button click
@@ -13,7 +13,7 @@ $(document).ready(function() {
 
   // but the problem is, text doesn't go away! change appendText function
   var appendText = function(text) {
-    $('#list').append('<li>' + text + '</li>');
+    $('#list').append($('<li>' + text + '</li>'));
     // +++++++ clear the input
     $('#input').val('');
   }
@@ -36,15 +36,15 @@ $(document).ready(function() {
   // sanitize empty inputs
   var appendText = function(text) {
     // check if input is empty
-    if (text != '') {
-      $('#list').append('<li>' + text + '</li>');
+    if (text.trim() != '') {
+      $('#list').append($('<li>' + text + '</li>'));
       $('#input').val('');      
     }
   }
 
   // add highlighting on click
   var appendText = function(text) {
-    if (text != '') {
+    if (text.trim() != '') {
       var item = $('<li>' + text + '</li>');
       // add on click handler
       item.click(function() {
